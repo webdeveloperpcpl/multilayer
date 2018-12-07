@@ -1,0 +1,36 @@
+<?php
+
+namespace $MANAGER_NAMESPACE$;
+
+
+class $CLASS_NAME$Manager implements $CLASS_NAME$ManagerInterface
+{
+
+    private $repository;
+
+    public function __construct($CLASS_NAME$RepositoryInterface $repository)
+    {
+
+        $this->repository = $repository;
+    }
+
+    public function index()
+    {
+    }
+
+    public function show($id)
+    {
+    }
+
+    public function create($request)
+    {
+    }
+
+    public function update($request, $id)
+    {
+    }
+
+    public function destroy($id)
+    {
+    }
+}

@@ -1,0 +1,32 @@
+<?php
+
+namespace $REPOSITORY_NAMESPACE$;
+
+
+
+class $CLASS_NAME$Repository implements $CLASS_NAME$RepositoryInterface
+{
+
+    public function index()
+    {
+    }
+
+    public function show($id)
+    {
+    }
+
+    public function create($elements)
+    {
+    }
+
+
+    public function update($elements, $id)
+    {
+    }
+
+
+    public function destroy($id)
+    {
+    }
+
+}

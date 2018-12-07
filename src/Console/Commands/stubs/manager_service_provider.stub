@@ -1,0 +1,63 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
+use Config;
+use Illuminate\Database\ConnectionResolver;
+
+
+class ManagerServiceProvider extends ServiceProvider
+{
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
+
+    /**
+     * Boot the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+        if (php_sapi_name() != "cli") {
+            $client = apache_request_headers()['Client'] ?? '';
+        } else {
+            $client = '';
+        }
+
+        $classes = config('manager.class');
+
+
+        if ($classes) {
+            foreach ($classes as $class) {
+
+                if (class_exists("App\\Managers\\$client\\$class", false)) {
+
+                    $this->app->bind("App\\Managers\\$class" . "Interface", "App\\Managers\\$client\\$class");
+                } else {
+
+                    $this->app->bind("App\\Managers\\$class" . "Interface", "App\\Managers\\$class");
+                }
+            }
+        }
+
+    }
+
+
+}

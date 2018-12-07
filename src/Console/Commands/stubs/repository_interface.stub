@@ -1,0 +1,14 @@
+<?php
+
+namespace $REPOSITORY_NAMESPACE$;
+
+
+interface $CLASS_NAME$RepositoryInterface
+{
+
+    function index();
+    function show($id);
+    function create($request);
+    function update($request, $id);
+    function destroy($id);
+}

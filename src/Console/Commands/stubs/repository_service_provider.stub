@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
+use Config;
+
+
+class RepositoryServiceProvider extends ServiceProvider
+{
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
+
+    /**
+     * Boot the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+        if (php_sapi_name() != "cli") {
+            $client = apache_request_headers()['Client'] ?? '';
+        } else {
+            $client = '';
+        }
+
+        $classes = config('repository.class');
+
+        if ($classes) {
+            foreach ($classes as $class) {
+
+                if (class_exists("App\\Repositories\\$client\\$class")) {
+
+                    $this->app->bind("App\\Repositories\\$class" . "Interface", "App\\Repositories\\$client\\$class");
+                } else {
+
+                    $this->app->bind("App\\Repositories\\$class" . "Interface", "App\\Repositories\\$class");
+                }
+            }
+
+        }
+    }
+
+}

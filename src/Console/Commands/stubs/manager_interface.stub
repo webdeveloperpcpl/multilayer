@@ -1,0 +1,14 @@
+<?php
+
+namespace $MANAGER_NAMESPACE$;
+
+
+interface $CLASS_NAME$ManagerInterface
+{
+
+    function index();
+    function show($id);
+    function create($request);
+    function update($request, $id);
+    function destroy($id);
+}

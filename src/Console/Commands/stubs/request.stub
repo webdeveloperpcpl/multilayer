@@ -1,0 +1,46 @@
+<?php
+
+namespace $REQUEST_NAMESPACE$;
+
+class  $CLASS_NAME$Request
+{
+    public function authorize($method)
+    {
+        return true;
+    }
+
+    public function rules($method)
+    {
+
+        switch ($method) {
+
+            case 'GET':
+                 return [];
+
+            case 'DELETE':
+                return [];
+
+            case 'POST':
+                return [];
+
+            case 'PUT':
+                return [];
+
+            case 'PATCH':
+
+                return [];
+            default:
+                break;
+        }
+    }
+
+    public function messages($method)
+    {
+        return [];
+    }
+
+    public function filters($method)
+    {
+        return [];
+    }
+}
