@@ -3,8 +3,10 @@ Creates classes of managers and repository classes
 
 Installation: *composer require webdeveloperpcpl/multilayer*
 
-Example of use:
+**Example of use:**
+
 php artisan make:multilayer test
+
 this command will create:
 - app/Http/Controllers/TestController.php
 - app/Http/Request/TestRequest.php
