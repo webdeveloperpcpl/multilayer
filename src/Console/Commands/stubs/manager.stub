@@ -2,6 +2,8 @@
 
 namespace $MANAGER_NAMESPACE$;
 
+use $REPOSITORY_INTERFACE_USE$;
+
 
 class $CLASS_NAME$Manager implements $CLASS_NAME$ManagerInterface
 {
