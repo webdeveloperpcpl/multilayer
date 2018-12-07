@@ -1,6 +1,7 @@
 # Installation package for Laravel 5.7
-Creates classes of managers and repository classes\*
-Installation: composer require webdeveloperpcpl/multilayer
+Creates classes of managers and repository classes
+
+Installation: *composer require webdeveloperpcpl/multilayer*
 
 Example of use:
 php artisan make:multilayer test
